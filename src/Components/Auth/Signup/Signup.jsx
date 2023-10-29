@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 function Signup(props) {
-  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [first, setFirst] = useState('');
@@ -35,43 +33,34 @@ function Signup(props) {
       let results = await response.json();
       console.log(results);
       props.setToken(results.token);
-      if (response.status === 200) navigate('/about');
+      if (response.status === 200);
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <div>
+    <div className="square-container">
       <Form>
         <FormGroup>
-          <Label for="exampleFirst">
-            First
-          </Label>
           <Input
             id="exampleFirst"
             name="first"
-            placeholder="First"
+            placeholder="First Name"
             type="text"
             onChange={e => setFirst(e.target.value)}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleLast">
-            First
-          </Label>
           <Input
             id="exampleLast"
             name="last"
-            placeholder="Last"
+            placeholder="Last Name"
             type="text"
             onChange={e => setLast(e.target.value)}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleEmail">
-            Email
-          </Label>
           <Input
             id="exampleEmail"
             name="email"
@@ -81,9 +70,6 @@ function Signup(props) {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="examplePassword">
-            Password
-          </Label>
           <Input
             id="examplePassword"
             name="password"
@@ -92,8 +78,10 @@ function Signup(props) {
             onChange={e => setPassword(e.target.value)}
           />
         </FormGroup>
-        <Button onClick={displayInputFields}>Submit</Button>
-      </Form>
+        </Form>
+        <div className="button-container">
+        <Button onClick={displayInputFields}>Signup</Button>
+        </div>
     </div>
   );
 }

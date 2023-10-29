@@ -5,7 +5,7 @@ import './Nav.css';
 function Navbar() {
   return (
     <header className="navbar">
-      Not Discord
+     <p className= "text-element">Not Discord</p> 
     </header>
   );
 }
