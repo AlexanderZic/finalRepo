@@ -3,8 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
+
+
+
 import Signup from './Components/Auth/Signup/Signup';
 import {useEffect, useState} from 'react'
+
+import Auth from './Components/Auth/Auth';
+
 function App() {
 const [token, setToken] = useState ('')
 
@@ -31,7 +37,7 @@ localStorage.tokken = newToken}
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <Signup />
+        <Auth />
         <Routes>
           <Route />
         </Routes>
