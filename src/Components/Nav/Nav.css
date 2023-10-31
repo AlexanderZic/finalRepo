@@ -18,3 +18,8 @@
   align-items: center;  
 }
 
+button {
+  color:blue;
+  background-color: lightgray;
+  border-color: rgb(132, 45, 14)39, 13;
+}
