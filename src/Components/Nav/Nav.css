@@ -18,3 +18,8 @@
   align-items: center;  
 }
 
+button {
+  color:blue;
+  background-color: lightgray;
+  border-color: orangered;
+}
