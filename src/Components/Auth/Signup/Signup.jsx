@@ -1,43 +1,15 @@
 import { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Signup(props) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
 
   const signupRoute = 'http://127.0.0.1:4000/user/signup';
-
-  async function displayInputFields(e) {
-    e.preventDefault();
-    console.log('testing this function');
-    console.log(first, last);
-    console.log(email);
-    console.log(password);
-
-    try {
-      let response = await fetch(signupRoute, {
-        headers: new Headers({
-          'content-type': 'application/json',
-        }),
-        method: 'POST',
-        body: JSON.stringify({
-          first: first,
-          last: last,
-          mail: email,
-          pass: password
-        })
-      });
-
-      let results = await response.json();
-      console.log(results);
-      props.setToken(results.token);
-      if (response.status === 200);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   return (
     <div className="square-container">
@@ -86,9 +58,48 @@ function Signup(props) {
         <div className="button-container">
         <Button onClick={displayInputFields}>Signup</Button>
         </div>
-        
     </div>
   );
+
+ async function displayInputFields(e) {
+    e.preventDefault();
+    console.log('testing this function');
+    console.log(first, last);
+    console.log(email);
+    console.log(password);
+
+    try {
+      let response = await fetch(signupRoute, {
+        headers: new Headers({
+          'content-type': 'application/json',
+        }),
+        method: 'POST',
+        body: JSON.stringify({
+          first: first,
+          last: last,
+          mail: email,
+          pass: password
+        })
+      });
+
+      let results = await response.json();
+      console.log(results);
+      props.setToken(results.token);
+      if (response.status === 200);
+      navigate('/')//have this go to homepage?
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+function DisplayUser(props) {
+  return (
+    <div>
+      <h2>Username: { props.username }</h2>
+      <h2>Password: { props.password }</h2>
+    </div>
+  )
 }
 
 export default Signup;
