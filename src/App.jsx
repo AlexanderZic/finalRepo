@@ -19,7 +19,7 @@ function initializeToken () {
 
 function updateToken (newToken){
 setToken (newToken)
-localStorage.tokken = newToken}
+localStorage.token = newToken}
     
 
   return (
@@ -28,7 +28,7 @@ localStorage.tokken = newToken}
         <Navbar token={token}/>
         <Auth setToken={updateToken}/>
         <Routes>
-        <Route path="/Login" element={<Login />} />
+        <Route path="/Login" element={<Login setToken={updateToken} />} />
         </Routes>
       </BrowserRouter>
     {token ? 'Token is Updated' : null}

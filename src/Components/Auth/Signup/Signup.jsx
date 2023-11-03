@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
-import Login from '../Login/Login';
 
 function Signup(props) {
   const navigate = useNavigate();
@@ -11,47 +10,6 @@ function Signup(props) {
   
 
   const signupRoute = 'http://127.0.0.1:4000/user/signup';
-
-  return (
-    <div className="square-container">
-      <Form>
-        <FormGroup>
-          <Input
-            id="exampleUserName"
-            name="userName"
-            placeholder="User Name"
-            type="text"
-            onChange={e => setUserName(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            id="exampleEmail"
-            name="email"
-            placeholder="Email"
-            type="email"
-            onChange={e => setEmail(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            id="examplePassword"
-            name="password"
-            placeholder="Password"
-            type="password"
-            onChange={e => setPassword(e.target.value)}
-          />
-        </FormGroup>
-        </Form>
-        <div className="switch-link">
-          <a href="#" onClick={props.switchToLogin} >Switch to Login</a>
-          </div>
-         
-        <div className="button-container">
-        <Button onClick={displayInputFields}>Signup</Button>
-        </div>
-    </div>
-  );
 
  async function displayInputFields(e) {
     e.preventDefault();
@@ -82,15 +40,47 @@ function Signup(props) {
       console.log(error);
     }
   }
+  return (
+    <div className="square-container">
+      <Form onSubmit={displayInputFields}>
+        <FormGroup>
+          <Input
+            id="exampleUserName"
+            name="userName"
+            placeholder="User Name"
+            type="text"
+            onChange={e => setUserName(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Input
+            id="exampleEmail"
+            name="email"
+            placeholder="Email"
+            type="email"
+            onChange={e => setEmail(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Input
+            id="examplePassword"
+            name="password"
+            placeholder="Password"
+            type="password"
+            onChange={e => setPassword(e.target.value)}
+          />
+        </FormGroup> 
+        <div className="switch-link">
+          <a href="#" onClick={props.switchToLogin} >Switch to Login</a>
+          </div>
+         
+        <div className="button-container">
+        <Button  type="submit">Signup</Button>    
+        </div>
+        </Form>
+     </div>
+  );
 }
 
-function DisplayUser(props) {
-  return (
-    <div>
-      <h2>Username: { props.username }</h2>
-      <h2>Password: { props.password }</h2>
-    </div>
-  )
-}
 
 export default Signup;
