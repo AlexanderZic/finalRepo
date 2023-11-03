@@ -5,6 +5,7 @@ import Navbar from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import {useEffect, useState} from 'react'
 import Auth from './Components/Auth/Auth';
+import Login from './Components/Auth/Login/Login';
 
 function App() {
 const [token, setToken] = useState ('')
@@ -25,13 +26,12 @@ localStorage.tokken = newToken}
     <div className="App">
       <BrowserRouter>
         <Navbar token={token}/>
+        <Auth setToken={updateToken}/>
         <Routes>
-          <Route 
-            path="/Auth"
-            element={<Auth setToken={updateToken}/>}/>
+        <Route path="/Login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-      {token ? 'Token is Updated' : null}
+    {token ? 'Token is Updated' : null}
       <Footer />
     </div>
   );
