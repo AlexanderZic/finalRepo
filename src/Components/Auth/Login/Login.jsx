@@ -25,7 +25,7 @@ function Login(setToken) {
       console.log(response.status);
       setToken(results.token);
       if (response.status === 200);
-      navigate('/')//Set this to homepage?
+      navigate()//Set this to homepage?
   }
 
   return (

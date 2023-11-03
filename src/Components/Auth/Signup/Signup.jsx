@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
+import Login from '../Login/Login';
 
 function Signup(props) {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [first, setFirst] = useState('');
-  const [last, setLast] = useState('');
+  const [userName, setUserName] = useState('');
+  
 
   const signupRoute = 'http://127.0.0.1:4000/user/signup';
 
@@ -16,20 +17,11 @@ function Signup(props) {
       <Form>
         <FormGroup>
           <Input
-            id="exampleFirst"
-            name="first"
-            placeholder="First Name"
+            id="exampleUserName"
+            name="userName"
+            placeholder="User Name"
             type="text"
-            onChange={e => setFirst(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            id="exampleLast"
-            name="last"
-            placeholder="Last Name"
-            type="text"
-            onChange={e => setLast(e.target.value)}
+            onChange={e => setUserName(e.target.value)}
           />
         </FormGroup>
         <FormGroup>
@@ -64,7 +56,7 @@ function Signup(props) {
  async function displayInputFields(e) {
     e.preventDefault();
     console.log('testing this function');
-    console.log(first, last);
+    console.log(userName);
     console.log(email);
     console.log(password);
 
@@ -75,10 +67,9 @@ function Signup(props) {
         }),
         method: 'POST',
         body: JSON.stringify({
-          first: first,
-          last: last,
-          mail: email,
-          pass: password
+         userName: userName,
+          email: email,
+          password: password
         })
       });
 
@@ -86,7 +77,7 @@ function Signup(props) {
       console.log(results);
       props.setToken(results.token);
       if (response.status === 200);
-      navigate('/')//have this go to homepage?
+      navigate('/Login')
     } catch (error) {
       console.log(error);
     }
