@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import Auth from './Components/Auth/Auth';
 import Login from './Components/Auth/Login/Login';
 import RoomDisplay from './Components/RoomDisplay/RoomDisplay';
+import AddRoom from './Components/RoomDisplay/AddRoom';
 
 function App() {
   const [token, setToken] = useState('');
@@ -46,12 +47,15 @@ function App() {
         <Auth setToken={updateToken} />
         <Routes>
           <Route path="/Login" element={<Login setToken={updateToken} />} />
-          <Route path="/RoomDisplay" element={<RoomDisplay loggedIn={isLoggedIn} />} />
+          <Route path="/RoomDisplay" element={<RoomDisplay loggedIn={isLoggedIn} token = {token} />} />
         </Routes>
       </BrowserRouter>
+     
       <Footer />
     </div>
   );
 }
+
+
 
 export default App;

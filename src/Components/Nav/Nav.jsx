@@ -11,18 +11,20 @@ const Navbar = ({ token, clearToken }) => {
     console.log('Logout successful');
   }
 
+  
   return (
     <nav>
       <header className="navbar">
-        <p className="text-element">Not Discord</p> {isAuthenticated ? (
-        <Button onClick={handleLogout} style={{ margin: '3px 10px' }}>
-          Log Out
-        </Button>
-      ) : null}
+        <p className="text-element">Not Discord</p>
+        {isAuthenticated && ( // Display "Log Out" button only when authenticated
+          <Button onClick={handleLogout} style={{ margin: '3px 10px' }}>
+            Log Out
+          </Button>
+        )}
       </header>
-     
     </nav>
   );
 }
+
 
 export default Navbar;
