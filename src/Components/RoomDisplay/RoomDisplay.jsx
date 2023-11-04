@@ -1,6 +1,9 @@
 import React from 'react';
 import './RoomDisplay.css';
+
 import AddRoom from './AddRoom';
+
+import DeleteRoom from './DeleteRoom'; // Import the DeleteRoom component
 
 const RoomDisplay = ( props ) => {
   if (!props.loggedIn) {
@@ -14,11 +17,16 @@ const RoomDisplay = ( props ) => {
     
     <div>
       <div className="available-rooms-container">
+
        <h2>Available Rooms</h2>
        <AddRoom  token = {props.token} />
+
       </div>
       <div className="room-title">
-       <h2>Room Title</h2>
+        <div className="title-container">
+          <h2>Room Title</h2>
+          <DeleteRoom />
+        </div>
       </div>
     </div>
   );
