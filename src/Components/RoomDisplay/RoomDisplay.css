@@ -1,0 +1,31 @@
+.available-rooms-container {
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Adjust the left value to create space on the left */
+  transform: translate(0, -50%);
+  width: 300px; /* Adjust the width as needed */
+  height: 600px; /* Set the same value as the width for a square */
+  background-color: #f0f0f0; /* Light grey background color */
+  border: 1px solid #ccc; /* Add a border for separation */
+  border-radius: 10px; /* Add rounded corners */
+  padding: 20px; /* Add padding around the form */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-title {
+  position: absolute;
+  top: 50%;
+  left: 320px; /* Adjust the left value to move it to the right */
+  transform: translate(10px, -50%);
+  width: 700px; /* Adjust the width as needed */
+  height: 600px; /* Set the same value as the width for a square */
+  background-color: #f0f0f0; /* Light grey background color */
+  border: 1px solid #ccc; /* Add a border for separation */
+  border-radius: 10px; /* Add rounded corners */
+  padding: 20px; /* Add padding around the form */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

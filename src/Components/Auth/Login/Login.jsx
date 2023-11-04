@@ -29,7 +29,7 @@ function Login(props) {
         console.log('Login successful');
         console.log('Token:', results.token);
         props.setToken(results.token);
-        navigate('/'); // Navigate to rooms
+        navigate('/RoomDisplay'); // Navigate to rooms
       }  else {
         console.log('Login failed');
       }
