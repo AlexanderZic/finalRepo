@@ -76,7 +76,7 @@ function Signup(props) {
           />
         </FormGroup> 
         <div className="switch-link">
-          <a href="#" onClick={props.switchToLogin} >Switch to Login</a>
+          <Button color="link" onClick={props.switchToLogin} >Switch to Login</Button>
           </div>
          
         <div className="button-container">
