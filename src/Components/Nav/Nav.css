@@ -18,8 +18,9 @@
   align-items: center;  
 }
 
-button {
-  color:blue;
-  background-color: lightgray;
-  border-color: rgb(132, 45, 14)39, 13;
-}
+Button {
+  padding: 10px; /* Add padding to the button for spacing */
+  background-color: #232323; /* Dark grey background color */
+  color: white; /* Text color */
+  padding: 10px; /* Add padding to the button for spacing */
+  }

@@ -34,12 +34,17 @@ function Signup(props) {
       let results = await response.json();
       console.log(results);
       props.setToken(results.token);
-      if (response.status === 200);
-      navigate('/Login')
-    } catch (error) {
-      console.log(error);
+
+      if (response.status === 200){
+      navigate('/Login');
+    } else {
+      // Signup failed, handle the error (e.g., display an error message)
+      console.log('Signup failed');
     }
+  } catch (error) {
+    console.log(error);
   }
+ }
   return (
     <div className="square-container">
       <Form onSubmit={displayInputFields}>
