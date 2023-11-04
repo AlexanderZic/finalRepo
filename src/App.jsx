@@ -18,7 +18,7 @@ function App() {
 
   function initializeToken() {
     setToken(localStorage.token);
-    console.log(localStorage.token);
+    console.log('TOKEN:', localStorage.token);
 
     // Set the isLoggedIn state based on the presence of the token
     setIsLoggedIn(!!localStorage.token);
