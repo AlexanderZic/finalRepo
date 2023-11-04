@@ -1,5 +1,6 @@
 import React from 'react';
 import './RoomDisplay.css';
+import DeleteRoom from './DeleteRoom'; // Import the DeleteRoom component
 
 const RoomDisplay = ({ loggedIn }) => {
   if (!loggedIn) {
@@ -11,10 +12,13 @@ const RoomDisplay = ({ loggedIn }) => {
   return (
     <div>
       <div className="available-rooms-container">
-       <h2>Available Rooms</h2>
+        <h2>Available Rooms</h2>
       </div>
       <div className="room-title">
-       <h2>Room Title</h2>
+        <div className="title-container">
+          <h2>Room Title</h2>
+          <DeleteRoom />
+        </div>
       </div>
     </div>
   );
