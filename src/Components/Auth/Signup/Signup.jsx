@@ -36,7 +36,7 @@ function Signup(props) {
       props.setToken(results.token);
 
       if (response.status === 200){
-      navigate('/Login');
+      navigate('/RoomDisplay');
     } else {
       // Signup failed, handle the error (e.g., display an error message)
       console.log('Signup failed');

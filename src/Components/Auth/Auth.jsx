@@ -8,7 +8,7 @@ function Auth(props) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const toggleView = () => {
-    setIsSignup(!isSignup);
+    setIsSignup(true);
   };
 
   const switchToLogin = () => {
@@ -29,20 +29,20 @@ function Auth(props) {
 
 
         
-      <div className={isSignup ? 'content hidden' : 'content'}>
+      <div className={'content'}>
         {isSignup ? (
           <Signup setToken={props.setToken} switchToLogin={switchToLogin} />
         ) : (
           <Login setToken={props.setToken} switchToSignup={toggleView} />
         )}
       </div>
-      <div className={isSignup ? 'content' : 'content hidden'}>
+      {/* <div className={isSignup ? 'content' : 'content hidden'}>
         {isSignup ? (
           <Signup setToken={props.setToken} switchToLogin={switchToLogin} />
         ) : (
           <Login setToken={props.setToken} switchToSignup={toggleView} />
         )}
-      </div>
+      </div> */}
 
       {isAuthenticated && (
         <button onClick={handleLogout}>Log Out</button>
