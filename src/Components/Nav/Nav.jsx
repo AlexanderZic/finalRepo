@@ -3,10 +3,12 @@ import './Nav.css';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
+
 const Navbar = ({ token, clearToken }) => {
   
 
   function handleLogout() {
+    
     clearToken();
     console.log('Logout successful');
   }

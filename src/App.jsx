@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import Auth from './Components/Auth/Auth';
+import Signup from './Components/Auth/Signup/Signup';
 import Login from './Components/Auth/Login/Login';
 import RoomDisplay from './Components/RoomDisplay/RoomDisplay';
 import AddRoom from './Components/RoomDisplay/AddRoom';
@@ -44,8 +45,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar token={token} clearToken={clearToken} />
-        <Auth setToken={updateToken} />
+        {/* <Auth setToken={updateToken} /> */}
         <Routes>
+          <Route path="/Signup" element={<Signup setToken={updateToken}/>} />
           <Route path="/Login" element={<Login setToken={updateToken} />} />
           <Route path="/RoomDisplay" element={<RoomDisplay loggedIn={isLoggedIn} token = {token} />} />
         </Routes>
