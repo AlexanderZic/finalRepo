@@ -8,7 +8,7 @@ function Auth(props) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const toggleView = () => {
-    setIsSignup(!isSignup);
+    setIsSignup(true);
   };
 
   const switchToLogin = () => {

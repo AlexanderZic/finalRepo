@@ -5,6 +5,7 @@ import AddRoom from './AddRoom';
 
 import DeleteRoom from './DeleteRoom'; // Import the DeleteRoom component
 import UpdateRoom from './UpdateRoom';
+import AllRooms from './AllRooms';
 
 const RoomDisplay = ( props ) => {
   if (!props.loggedIn) {
@@ -21,6 +22,7 @@ const RoomDisplay = ( props ) => {
 
        <h2>Available Rooms</h2>
        <AddRoom  token = {props.token} />
+       <AllRooms/>
 
       </div>
       <div className="room-title">
@@ -28,6 +30,8 @@ const RoomDisplay = ( props ) => {
           <h2>Room Title</h2>
           <DeleteRoom />
           <UpdateRoom/> 
+          
+
         </div>
       </div>
     </div>
