@@ -1,11 +1,15 @@
 import React from 'react';
+import RoomEditModal from '../RoomEditModal/RoomEditModal';
 import './RoomDisplay.css';
+
 
 import AddRoom from './AddRoom';
 
 import DeleteRoom from './DeleteRoom'; // Import the DeleteRoom component
 import UpdateRoom from './UpdateRoom';
 import AllRooms from './AllRooms';
+import RoomList from '../RoomList/RoomList';
+
 
 const RoomDisplay = ( props ) => {
   if (!props.loggedIn) {
@@ -24,12 +28,24 @@ const RoomDisplay = ( props ) => {
        <AddRoom  token = {props.token} />
        <AllRooms/>
 
+
       </div>
       <div className="room-title">
         <div className="title-container">
           <h2>Room Title</h2>
-          <DeleteRoom />
-          <UpdateRoom/> 
+          <RoomEditModal >
+          
+         
+         
+
+           </RoomEditModal>
+           
+           <UpdateRoom/> 
+
+           <DeleteRoom /> 
+       
+         
+         
           
 
         </div>
