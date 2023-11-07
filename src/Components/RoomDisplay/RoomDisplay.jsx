@@ -1,9 +1,7 @@
 import React from "react";
 import RoomEditModal from "../RoomEditModal/RoomEditModal";
 import "./RoomDisplay.css";
-
 import AddRoom from "./AddRoom";
-
 import DeleteRoom from "./DeleteRoom"; // Import the DeleteRoom component
 import UpdateRoom from "./UpdateRoom";
 import AllRooms from "./AllRooms";
