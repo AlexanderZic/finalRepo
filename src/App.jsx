@@ -45,7 +45,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar token={token} clearToken={clearToken} />
-        {/* <Auth setToken={updateToken} /> */}
+        <Auth setToken={updateToken} />
         <Routes>
           <Route path="/Signup" element={<Signup setToken={updateToken}/>} />
           <Route path="/Login" element={<Login setToken={updateToken} />} />
