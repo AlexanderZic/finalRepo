@@ -1,26 +1,84 @@
 import React from 'react'
 import{ Card, CardBody, ListGroup, ListGroupItem, CardLink, CardTitle, CardText } from 'reactstrap'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 
 function AllRooms() {
 
     const [showRooms, setShowRooms] = useState ('')
+    const [rooms, setRooms] = useState ([])
     
     const showRoomRoute = 'http://127.0.0.1:4000/room/list';
 
+    
 
-    async function showTheRooms (e) {
-        e.preventDefault();
+    // async function showTheRooms (e) {
+    //     e.preventDefault();
 
-        console.log ('testing this function ');
+    //     console.log (showTheRooms);
 
+    //     try {
+    //         let response = await fetch (showRoomRoute)
+    //         if (response.ok) {
+    //             const data = await response.json ()
+    //             setRooms(data.rooms)
+
+    //         } else {
+    //             console.error('Failed to fetch rooms')
+    //         }
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
+    const showTheRooms = useCallback(async () => {
         try {
-            let response = await fetch (showRoomRoute)
+          const response = await fetch(showRoomRoute);
+          if (response.ok) {
+            const data = await response.json();
+            setRooms(data.rooms);
+          } else {
+            console.error('Failed to fetch rooms');
+          }
         } catch (error) {
-            console.log(error)
+          console.error(error);
         }
-    }
+      }, [showRoomRoute]);
+
+
+// fetch (showRoomRoute)
+// .then (response => response.json)
+// .then (data => ListGroupItem(data))
+// .catch (err => console.error(err))
+
+// function showRoomList (data) {
+//     let htmlContent = "";
+
+
+    
+
+
+// }
+
+
+    useEffect (()=> 
+        // async function fetchRooms () 
+
+        {  showTheRooms()
+        //     try {
+        //         const response = await fetch (showRoomRoute)
+        //         if (response.ok) {
+        //             const data = await response.json ();
+
+        //         } else {
+        //             console.error('Failed to fetch rooms')
+        //         }
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        // }
+        // fetchRooms ();
+    }, [showTheRooms]);
     
   return (
     <div>AllRooms
@@ -55,9 +113,11 @@ function AllRooms() {
     </CardText>
   </CardBody>
   <ListGroup flush>
-    <ListGroupItem>
+    {rooms.map((room,index) => (
+    <ListGroupItem key = {index}>{room.title}</ListGroupItem>
+    ))}
       An item
-    </ListGroupItem>
+    
     <ListGroupItem>
       A second item
     </ListGroupItem>
