@@ -15,9 +15,9 @@ function Auth(props) {
     setIsSignup(false);
   };
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-  };
+  // const handleLogin = () => {
+  //   setIsAuthenticated(true);
+  // };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
