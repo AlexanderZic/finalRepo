@@ -30,7 +30,7 @@ function Login(props) {
         console.log('Token:', results.token);
         props.setToken(results.token);
         navigate('/RoomDisplay'); // Navigate to rooms
-      }  else {
+      } else {
         console.log('Login failed');
       }
     } catch (error) {
@@ -58,16 +58,17 @@ function Login(props) {
             type="password"
             onChange={e => setPassword(e.target.value)}
           />
-        </FormGroup>  
+        </FormGroup>
         <div className="switch-link">
-          <Button color="link" onClick={props.switchToSignup}>Switch to Signup</Button>
-          </div>
-      <div className="button-container"> 
-        <Button type="submit">Login</Button>
-      </div>
+          <Button color="link" onClick={() => navigate('/signup')}>
+            Switch to Signup
+          </Button>
+        </div>
+        <div className="button-container">
+          <Button type="submit">Login</Button>
+        </div>
       </Form>
     </div>
-  
   );
 }
 
