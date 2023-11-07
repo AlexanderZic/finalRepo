@@ -27,7 +27,7 @@ function AllRooms() {
 
 <Card
   style={{
-    width: '18rem'
+    width: '18.2rem'
   }}
 >
   {/* <img
