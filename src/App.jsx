@@ -18,11 +18,14 @@ function App() {
   useEffect(initializeToken, []);
 
   function initializeToken() {
-    setToken(localStorage.token);
-    console.log('TOKEN:', localStorage.token);
-
-    // Set the isLoggedIn state based on the presence of the token
-    setIsLoggedIn(!!localStorage.token);
+    const storedToken = localStorage.token;
+    console.log('TOKEN:', storedToken);
+  
+    if (storedToken) {
+      setToken(storedToken);
+      // Set the isLoggedIn state to true when a token is loaded from local storage
+      setIsLoggedIn(true);
+    }
   }
 
   function updateToken(newToken) {
@@ -45,12 +48,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar token={token} clearToken={clearToken} />
-        <Auth setToken={updateToken} />
+        {/* <Auth setToken={updateToken} /> */}
         <Routes>
-          <Route path="/Signup" element={<Signup setToken={updateToken}/>} />
-          <Route path="/Login" element={<Login setToken={updateToken} />} />
-          <Route path="/RoomDisplay" element={<RoomDisplay loggedIn={isLoggedIn} token = {token} />} />
-        </Routes>
+         <Route path="/" element={ <Signup setToken={updateToken} />} />
+          <Route path="/Signup" element={<Signup setToken={updateToken} />} />
+           <Route path="/Login" element={<Login setToken={updateToken} />} />
+           <Route path="/RoomDisplay" element={<RoomDisplay loggedIn={isLoggedIn} token={token} />} />
+          </Routes>
       </BrowserRouter>
      
       <Footer />

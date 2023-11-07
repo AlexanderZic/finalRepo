@@ -26,9 +26,6 @@ function Auth(props) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-
-
-        
       <div className={'content'}>
         {isSignup ? (
           <Signup setToken={props.setToken} switchToLogin={switchToLogin} />
@@ -47,8 +44,6 @@ function Auth(props) {
       {isAuthenticated && (
         <button onClick={handleLogout}>Log Out</button>
       )}
-
-      
     </div>
   );
 }
