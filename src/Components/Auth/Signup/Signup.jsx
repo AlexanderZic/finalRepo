@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { Form, FormGroup, Input, Button } from 'reactstrap';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Form, FormGroup, Input, Button } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 function Signup(props) {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
 
-  const signupRoute = 'http://127.0.0.1:4000/user/signup';
+  const signupRoute = "http://127.0.0.1:4000/user/signup";
 
   async function displayInputFields(e) {
     e.preventDefault();
-    console.log('testing this function');
+    console.log("testing this function");
     console.log(userName);
     console.log(email);
     console.log(password);
@@ -20,9 +20,9 @@ function Signup(props) {
     try {
       let response = await fetch(signupRoute, {
         headers: new Headers({
-          'content-type': 'application/json',
+          "content-type": "application/json",
         }),
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           userName: userName,
           email: email,
@@ -35,10 +35,10 @@ function Signup(props) {
       props.setToken(results.token);
 
       if (response.status === 200) {
-        navigate('/RoomDisplay');
+        navigate("/RoomDisplay");
       } else {
         // Signup failed, handle the error (e.g., display an error message)
-        console.log('Signup failed');
+        console.log("Signup failed");
       }
     } catch (error) {
       console.log(error);
@@ -47,7 +47,7 @@ function Signup(props) {
 
   const handleSwitchToLoginClick = () => {
     // Navigate to the login page
-    navigate('/Login');
+    navigate("/Login");
   };
 
   return (

@@ -44,7 +44,7 @@
 
 /* Additional styles for hover and focus effects */
 .custom-button:hover {
-  background-color: #353535; /* Light grey background color on hover */
+  background-color: #353535; /* Dark grey background color on hover */
 }
 
 .custom-button:focus {
