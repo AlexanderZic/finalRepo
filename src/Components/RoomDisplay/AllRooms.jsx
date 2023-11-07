@@ -1,6 +1,7 @@
 import React from 'react'
 import{ Card, CardBody, ListGroup, ListGroupItem, CardLink, CardTitle, CardText } from 'reactstrap'
 import { useState, useEffect, useCallback } from 'react'
+import DeleteRoom from './DeleteRoom'
 
 
 function AllRooms() {
@@ -11,7 +12,7 @@ function AllRooms() {
     const showRoomRoute = 'http://127.0.0.1:4000/room/allRooms';
 
     
-
+// new comment
     // async function showTheRooms (e) {
     //     e.preventDefault();
 
@@ -115,24 +116,28 @@ function AllRooms() {
   <ListGroup flush>
     {rooms.map((room,index) => (
     <ListGroupItem key = {index}>{room.title}</ListGroupItem>
+    // <DeleteRoom room = {room} onDelete = {handleDeleteRoom}>
+
     ))}
-      An item
-    
+    WE GOT CARDS
+{/*     
     <ListGroupItem>
       A second item
     </ListGroupItem>
     <ListGroupItem>
       And a third item
     </ListGroupItem>
-  </ListGroup>
+
   <CardBody>
     <CardLink href="#">
       Card Link
     </CardLink>
     <CardLink href="#">
-      Another Card Link
-    </CardLink>
-  </CardBody>
+      Another Card Link */}
+    {/* </CardLink> */}
+  {/* </CardBody> */}
+
+  </ListGroup>
 </Card>
 
 

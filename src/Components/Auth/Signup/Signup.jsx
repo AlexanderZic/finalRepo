@@ -31,7 +31,7 @@ function Signup(props) {
       });
 
       let results = await response.json();
-      console.log(results);
+      // console.log(results);
       props.setToken(results.token);
 
       if (response.status === 200) {
