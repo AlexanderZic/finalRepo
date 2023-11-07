@@ -9,7 +9,7 @@ function AllRooms() {
     const [showRooms, setShowRooms] = useState ('')
     const [rooms, setRooms] = useState ([])
     
-    const showRoomRoute = 'http://127.0.0.1:4000/room/list';
+    const showRoomRoute = 'http://127.0.0.1:4000/room/allRooms';
 
     
 // new comment
@@ -82,11 +82,11 @@ function AllRooms() {
     }, [showTheRooms]);
     
   return (
-    <div>AllRooms
+    <div>
 
 <Card
   style={{
-    width: '18rem'
+    width: '18.2rem'
   }}
 >
   {/* <img
