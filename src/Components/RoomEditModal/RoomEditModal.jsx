@@ -1,4 +1,3 @@
-
 // import React, { useState } from 'react';
 // import {
 //   Button,
@@ -20,9 +19,9 @@
 //     const [modal, setModal] = useState(false);
 //     const [backdrop, setBackdrop] = useState(true);
 //     const [keyboard, setKeyboard] = useState(true);
-  
+
 //     const toggle = () => setModal(!modal);
-  
+
 //     const changeBackdrop = (e) => {
 //       let { value } = e.target;
 //       if (value !== 'static') {
@@ -30,11 +29,10 @@
 //       }
 //       setBackdrop(value);
 //     };
-  
+
 //     const changeKeyboard = (e) => {
 //       setKeyboard(e.currentTarget.checked);
 //     };
-  
 
 //   return (
 //     <div>
@@ -100,53 +98,42 @@
 // className: PropTypes.string,
 // };
 
-
 // }
 
 // export default RoomEditModal
 
-
-
-import React from 'react'
-import { Form, FormGroup, Input, Button, Label } from 'reactstrap'
+import React from "react";
+import { Form, FormGroup, Input, Button, Label } from "reactstrap";
 
 function RoomEditModal() {
   return (
     <>
-    <p>
-     You can Edit your Room Title below Type the name of the room and select the action. WARNING!! Are you sure you want to delete? 
-     {' '}
-     
-    </p>
-    <Form>
-      <FormGroup floating>
-        <Input
-          id="exampleEmail"
-          name="email"
-          placeholder="Room Title"
-          type="text"
-        />
-        <Label for="exampleEmail">
-         Room Title
-        </Label>
-      </FormGroup>
-      {' '}
-      <FormGroup floating>
-        <Input
-          id="examplePassword"
-          name="password"
-          placeholder="New Name"
-          type="password"
-        />
-        <Label for="examplePassword">
-    New Room Title
-        </Label>
-      </FormGroup>
-      {' '}
-      
-    </Form>
-  </>
-  )
+      <p>
+        You can Edit your Room Title below Type the name of the room and select
+        the action. WARNING!! Are you sure you want to delete?{" "}
+      </p>
+      <Form>
+        <FormGroup floating>
+          <Input
+            id="exampleEmail"
+            name="email"
+            placeholder="Room Title"
+            type="text"
+          />
+          <Label for="exampleEmail">Room Title</Label>
+        </FormGroup>{" "}
+        <FormGroup floating>
+          <Input
+            id="examplePassword"
+            name="password"
+            placeholder="New Name"
+            type="password"
+          />
+          <Label for="examplePassword">New Room Title</Label>
+        </FormGroup>{" "}
+      </Form>
+    </>
+  );
 }
 
-export default RoomEditModal
+export default RoomEditModal;

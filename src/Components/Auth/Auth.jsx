@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import Signup from './Signup/Signup';
-import Login from './Login/Login';
-
+import React, { useState } from "react";
+import Signup from "./Signup/Signup";
+import Login from "./Login/Login";
 
 function Auth(props) {
   const [isSignup, setIsSignup] = useState(true);
@@ -23,10 +22,11 @@ function Auth(props) {
     setIsAuthenticated(false);
   };
 
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div className={'content'}>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <div className={"content"}>
         {isSignup ? (
           <Signup setToken={props.setToken} switchToLogin={switchToLogin} />
         ) : (
@@ -41,9 +41,7 @@ function Auth(props) {
         )}
       </div> */}
 
-      {isAuthenticated && (
-        <button onClick={handleLogout}>Log Out</button>
-      )}
+      {isAuthenticated && <button onClick={handleLogout}>Log Out</button>}
     </div>
   );
 }

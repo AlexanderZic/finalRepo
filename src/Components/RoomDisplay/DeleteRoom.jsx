@@ -1,45 +1,36 @@
-import React, {useState} from 'react';
-import { Button } from 'reactstrap';
-import AllRooms from './AllRooms';
-
-
-
-
+import React, { useState } from "react";
+import { Button } from "reactstrap";
+import AllRooms from "./AllRooms";
 
 const DeleteRoom = ({ roomId, rooms, onDelete }) => {
   const handleDelete = async () => {
     try {
       const response = await fetch(`/api/room/deleteRooms/${roomId}`, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
-   
         console.log(`Room "${rooms.title}" deleted successfully.`);
         onDelete(roomId);
       } else {
         console.error(`Room "${rooms.title}" deletion failed.`);
       }
     } catch (error) {
-      console.error('Delete room error:', error);
+      console.error("Delete room error:", error);
     }
   };
 
   return (
     <div>
-      <button onClick={handleDelete}>
-        Delete Room
-      </button>
+      <Button onClick={handleDelete}>Delete Room</Button>
     </div>
   );
 };
 
 export default DeleteRoom;
-
-
 
 // const DeleteRoom = {room, onDelete } => {
 //   const handleDelete = async () => {
@@ -49,14 +40,14 @@ export default DeleteRoom;
 //             method: 'DELETE',
 //             headers: {
 //               'Content-Type': 'application/json',
-              
+
 //             },
 //           });
-    
+
 //           if (response.ok) {
 //             // Successful deletion
 //             console.log('Room deleted successfully.');
-//             onDelete(roomId); 
+//             onDelete(roomId);
 //           } else {
 //             console.error(`Room ${room.title} deletion failed.`);
 //           }
@@ -79,37 +70,30 @@ export default DeleteRoom;
 //   )
 // }
 
-
-  
-
-
 // export default DeleteRoom
 
+// const handleDelete = async () => {
 
-
-
-  // const handleDelete = async () => {
-    
 //   //   try {
 //   //     const response = await fetch(`/api/deleteRooms/${roomId}`, {
 //   //       method: 'DELETE',
 //   //       headers: {
 //   //         'Content-Type': 'application/json',
-          
+
 //   //       },
 //   //     });
 
 //   //     if (response.ok) {
 //   //       // Successful deletion
 //   //       console.log('Room deleted successfully.');
-//   //       onDelete(roomId); 
+//   //       onDelete(roomId);
 //   //     } else {
 //   //       console.error(`Room ${room.title} deletion failed.`);
 //   //     }
 //   //   } catch (error) {
 //   //     console.error('Delete room error:', error);
 //   //   }
-  
+
 //   // }
 //   // return (
 //   //   <div className="delete-button">
@@ -118,6 +102,5 @@ export default DeleteRoom;
 //       </Button>
 //     </div>
 //   );
-  
 
 // export default DeleteRoom;

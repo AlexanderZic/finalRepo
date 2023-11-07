@@ -1,26 +1,26 @@
-import React from 'react';
-import { Button } from 'reactstrap';
-import './UpdateRoom.css';
+import React from "react";
+import { Button } from "reactstrap";
+import "./UpdateRoom.css";
 
 const UpdateRoom = ({ roomId, onUpdate }) => {
   const handleUpdate = async () => {
     try {
       const response = await fetch(`/api/updateRooms/${roomId}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
         // Successful update
-        console.log('Room updated successfully.');
+        console.log("Room updated successfully.");
         onUpdate(roomId); // _id
       } else {
-        console.error('Room update failed.');
+        console.error("Room update failed.");
       }
     } catch (error) {
-      console.error('Update room error:', error);
+      console.error("Update room error:", error);
     }
   };
 
