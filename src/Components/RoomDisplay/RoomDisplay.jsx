@@ -24,7 +24,7 @@ const RoomDisplay = ( props ) => {
     <div>
       <div className="available-rooms-container">
 
-       <h2>Available Rooms</h2>
+       <h2>All Rooms</h2>
        <AddRoom  token = {props.token} />
        <AllRooms/>
 

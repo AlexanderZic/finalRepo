@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import './UpdateRoom.css';
 
 const UpdateRoom = ({ roomId, onUpdate }) => {
   const handleUpdate = async () => {
@@ -14,7 +15,7 @@ const UpdateRoom = ({ roomId, onUpdate }) => {
       if (response.ok) {
         // Successful update
         console.log('Room updated successfully.');
-        onUpdate(roomId); 
+        onUpdate(roomId); // _id
       } else {
         console.error('Room update failed.');
       }
