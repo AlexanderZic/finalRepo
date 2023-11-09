@@ -6,11 +6,21 @@
   color: #000000; 
   text-align: left;
   padding: 20px;
-  font-size: 20px;
   font-weight: bold; 
-  height: 40px;
+  height: 80px;
   display: flex;
   align-items: center;  
 }  
 
+.navbar .text-element {
+  padding-left: 30px; 
+  font-size: 25px;
+  align-items: center;  
+}
 
+Button {
+  padding: 10px; /* Add padding to the button for spacing */
+  background-color: #232323; /* Dark grey background color */
+  color: white; /* Text color */
+  padding: 10px; /* Add padding to the button for spacing */
+  }

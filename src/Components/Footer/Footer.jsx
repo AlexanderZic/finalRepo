@@ -1,12 +1,8 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 function Footer() {
-  return (
-    <footer className="footer">
-      Upright Project: React Chat
-    </footer>
-  );
+  return <footer className="footer">Upright Project: React Chat</footer>;
 }
 
 export default Footer;
